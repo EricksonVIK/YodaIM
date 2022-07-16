@@ -20,3 +20,4 @@ https://developers.giphy.com/docs/api/
 
 
 ## ScreenShot of Design
+![Gifyoda mock-up 2](https://user-images.githubusercontent.com/106448076/179367543-f9b1fb7b-29c2-46f9-8a92-ccfacb517910.png)
