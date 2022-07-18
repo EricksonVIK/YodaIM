@@ -7,8 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 class="test" id="test"></h1>
-    <!-- to be created based on wireframe -->
+    <h1 class="title" id="title">Welcome, Gifyoda I am</h1>
+    <h2>Generate your custom Starwars Gif now!</h2>
+    <form class="generate-gif" id="generate-gif">
+        <label for="phrase">Type your phrase here:</label>
+        <input type="text" id="phrase" name="phrase" placeholder="Ex. May the force be with you" minlength="1" maxlength="45" required>
+        <button type="submit" id="submit">Generate Gif</button>
+    </form>
+    <h3>Your custom gif:</h3>
     <script src="./js/main.js"></script>
 </body>
 </html>
