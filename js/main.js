@@ -26,6 +26,7 @@ var yodaPhrase = function (){
         console.log(data);
         console.log(data.contents);
         console.log(data.contents.translated);  
+        document.getElementById("finalPhrase").innerHTML=data.contents.translated;
     })
     .catch((err) => console.log(err));
 };
