@@ -14,7 +14,13 @@
         <input type="text" id="phrase" name="phrase" placeholder="Ex. May the force be with you" minlength="1" maxlength="45" required>
         <button type="submit" id="submit">Generate Gif</button>
     </form>
-    <h3>Your custom gif:</h3>
+    <div class="resholder">
+        <h3>Your custom gif:</h3>
+        <div class="phrase" id="phrase">
+            <h1 class="finalPhrase" id="finalPhrase"></h1>
+        </div>
+        <div class="gif" id="gif"></div>
+    </div>
     <script src="./js/main.js"></script>
 </body>
 </html>
