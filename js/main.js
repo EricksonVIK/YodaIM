@@ -13,12 +13,20 @@ function getInput(){
     text.push(enteredPhrase);
 }
 
+function clearInput(){
+    console.log("called clear")
+    document.getElementById("phrase").value="";
+}
+
 var submitForm = function(){
     // prevent page from refreshing
     event.preventDefault();
+    // run functions
     getInput();
     yodaGif();
     yodaPhrase();
+    // clearInput();
+
 }
 
 
@@ -54,6 +62,7 @@ var yodaPhrase = function (){
             document.getElementById("finalPhrase").textContent=data.contents.translated;
         })
     .catch((err) => console.log(err));
+    clearInput();
 };
 
 
