@@ -4,6 +4,8 @@ var apiKey = "yGaUUWmiT0fVGuECOupVZ3GOLKgW62fu"
 // global
 var userInput =document.querySelector("#generate-gif");
 var phraseInput=document.querySelector("#phrase")
+var gifHolder = document.querySelector("#gif");
+
 var text = [];
 
 // added this function to test the event listener - can comment out if not needed
@@ -25,25 +27,30 @@ var submitForm = function(){
     event.preventDefault();
     // run functions
     getInput();
+    gifHolder.innerHTML = "";
+
     yodaGif();
-    yodaPhrase();
+    // yodaPhrase();
 }
 
 // fetch yoda gif
 var yodaGif =function(){
-    var gifApi = "https://api.giphy.com/v1/gifs/search?q=starwars+yoda&api_key=" + apiKey + "&limit=1";
+    var gifApi = "https://api.giphy.com/v1/gifs/search?q=starwars+yoda&api_key=" + apiKey + "&limit=20";
     fetch(gifApi)
         .then(response => response.json())
         .then(json => {
             json.data
-            .map(gif => gif.images.fixed_height.url)
-        .forEach(url => {
+            // .map(gif => gif.images.fixed_height.url)
+        // .forEach(url => {
+            var url= json.data[Math.floor(Math.random() *20)].images.fixed_height.url
             var img = document.createElement('img')
             img.src = url
-            var gifHolder = document.querySelector("#gif");
+            // var gifHolder = document.querySelector("#gif");
             gifHolder.appendChild(img);
-        })
+        // })
+        console.log(json);
   })
+
   .catch(error => document.body.appendChild = error)
 };
 
