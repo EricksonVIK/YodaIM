@@ -1,33 +1,24 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 #title {
-    font-family:cursive
+  font-family: cursive;
 }
-
 
 body {
-    background: linear-gradient(#8d6e63, #ffffff, #8d6e63 );
-   
+  background: linear-gradient(#8d6e63, #ffffff, #8d6e63);
 }
-
 
 #header {
-   
-    background-color: #82B04D;
-    border-bottom: 5px solid #1b5e20;
-    
+  background-color: #82b04d;
+  border-bottom: 5px solid #1b5e20;
 }
 
-
-
-
-h2 {
+/* h2 {
     padding: 5px;
     border-bottom: 3px solid brown;
     margin-bottom: 20px;
-};
-
+}; */
