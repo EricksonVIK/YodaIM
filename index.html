@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./css/stylesheet.css">
+
     <title>Document</title>
 </head>
 <body>
-    <h1 class="title" id="title">Welcome, Gifyoda I am</h1>
-    <h2>Generate your custom Starwars Gif now!</h2>
-    <form class="generate-gif" id="generate-gif">
-        <label for="phrase">Type your phrase here:</label>
-        <input type="text" id="phrase" name="phrase" placeholder="Ex. May the force be with you" minlength="1" maxlength="45" required>
-        <button type="submit" id="submit">Generate Gif</button>
-    </form>
-    <div class="resholder">
-        <h3>Your custom gif:</h3>
-        <div class="phrase" id="phrase">
-            <h1 class="finalPhrase" id="finalPhrase"></h1>
+
+   <div class="row" id="header" >
+
+        <img src="./image/Gifyoda.png" alt="" id="logo" class="brand-logo col s2">
+
+        <h1 class="col s8 center-align" id="title">Welcome, Gifyoda I am</h1>
+
+   </div>
+
+   <div class="container row">
+
+        
+        <form class="generate-gif input-field col l4" id="generate-gif">
+            <label for="phrase" class="green-text text-darken-2">Type your phrase here:</label>
+            <input type="text" id="phrase" name="phrase"  minlength="1" maxlength="45" required autocomplete="off" class="materialize-textarea">
+            <button type="submit" class="btn hoverable" id="submit">Generate Gif</button>
+        </form>
+        <div class="resholder col l8 m12">
+            <h3>Your custom gif:</h3>
+            <div class="phrase" id="phrase">
+                <h1 class="finalPhrase" id="finalPhrase"></h1>
+            </div>
+            <div class="gif" id="gif"></div>
         </div>
-        <div class="gif" id="gif"></div>
+
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
 </html>
