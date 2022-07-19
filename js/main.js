@@ -1,8 +1,15 @@
 // giphy apiKey
 var apiKey = "yGaUUWmiT0fVGuECOupVZ3GOLKgW62fu"
 
+// global
+var userInput =document.querySelector("#generate-gif");
+var phraseInput=document.querySelector("#phrase")
+var textSubmit=phraseInput.value.trim();
+var text =textSubmit;
+
+
 var yodaGif =function(){
-    fetch("https://api.giphy.com/v1/gifs/search?q=starwars+yoda+excited&api_key=" + apiKey + "&limit=1")
+    fetch("https://api.giphy.com/v1/gifs/search?q=starwars+yoda&api_key=" + apiKey + "&limit=1")
         .then(response => response.json())
         .then(json => {
             json.data
@@ -17,7 +24,6 @@ var yodaGif =function(){
   .catch(error => document.body.appendChild = error)
 };
 
-var text ="why is this not working";
 
 var yodaPhrase = function (){
     fetch(`http://api.funtranslations.com/translate/yoda?text=${text}`)
@@ -31,5 +37,14 @@ var yodaPhrase = function (){
     .catch((err) => console.log(err));
 };
 
-yodaGif();
-yodaPhrase();
+var submitForm = function(){
+    // prevent page from refreshing
+    event.preventDefault();
+    yodaGif();
+    yodaPhrase();
+}
+
+// yodaGif();
+// yodaPhrase();
+
+userInput.addEventListener("submit", submitForm);
