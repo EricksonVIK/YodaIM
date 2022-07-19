@@ -6,6 +6,7 @@ var userInput =document.querySelector("#generate-gif");
 var phraseInput=document.querySelector("#phrase")
 var text = [];
 
+// added this function to test the event listener - can comment out if not needed
 function getInput(){
     var enteredPhrase=phraseInput.value.trim();
     alert(enteredPhrase);
@@ -18,8 +19,6 @@ var submitForm = function(){
     getInput();
     yodaGif();
     yodaPhrase();
-    // var enteredPhrase=phraseInput.value.trim();
-    // text.push(enteredPhrase);
 }
 
 
@@ -40,8 +39,7 @@ var yodaGif =function(){
   .catch(error => document.body.appendChild = error)
 };
 
-// var text = phraseInput.value();
-// // var text="this is starting to piss me off"
+// var text="this is starting to piss me off" -- this works without the text input
 
 var yodaPhrase = function (){
     console.log("called");
