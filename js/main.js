@@ -30,6 +30,7 @@ var submitForm = function(){
     gifHolder.innerHTML = "";
 
     yodaGif();
+    clearInput();
     // yodaPhrase();
 }
 
