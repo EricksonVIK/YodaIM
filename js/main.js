@@ -13,15 +13,23 @@ function getInput(){
     text.push(enteredPhrase);
 }
 
+// clear Input field
+function clearInput(){
+    console.log("called clear")
+    document.getElementById("phrase").value="";
+}
+
+// submit on button event
 var submitForm = function(){
     // prevent page from refreshing
     event.preventDefault();
+    // run functions
     getInput();
     yodaGif();
     yodaPhrase();
 }
 
-
+// fetch yoda gif
 var yodaGif =function(){
     var gifApi = "https://api.giphy.com/v1/gifs/search?q=starwars+yoda&api_key=" + apiKey + "&limit=1";
     fetch(gifApi)
@@ -39,8 +47,7 @@ var yodaGif =function(){
   .catch(error => document.body.appendChild = error)
 };
 
-// var text="this is starting to piss me off" -- this works without the text input
-
+// fetch yoda translation
 var yodaPhrase = function (){
     console.log("called");
     var phraseApi = "http://api.funtranslations.com/translate/yoda?text=" + text + "";
@@ -54,6 +61,7 @@ var yodaPhrase = function (){
             document.getElementById("finalPhrase").textContent=data.contents.translated;
         })
     .catch((err) => console.log(err));
+    clearInput();
 };
 
 
