@@ -56,7 +56,7 @@ var yodaGif =function(){
 // fetch yoda translation
 var yodaPhrase = function (){
     console.log("called");
-    var phraseApi = "http://api.funtranslations.com/translate/yoda?text=" + text + "";
+    var phraseApi = "https://api.funtranslations.com/translate/yoda?text=" + text + "";
     fetch (phraseApi)
         .then((res) => res.json())
         .then((data) => {
