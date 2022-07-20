@@ -6,18 +6,18 @@ var userInput =document.querySelector("#generate-gif");
 var phraseInput=document.querySelector("#phrase")
 var gifHolder = document.querySelector("#gif");
 
-var text = [];
+var text = "";
 
 // added this function to test the event listener - can comment out if not needed
 function getInput(){
     var enteredPhrase=phraseInput.value.trim();
-    alert(enteredPhrase);
-    text.push(enteredPhrase);
+    // alert(enteredPhrase);
+    text=enteredPhrase;
 }
 
 // clear Input field
 function clearInput(){
-    console.log("called clear")
+    // console.log("called clear")
     document.getElementById("phrase").value="";
 }
 
@@ -28,10 +28,9 @@ var submitForm = function(){
     // run functions
     getInput();
     gifHolder.innerHTML = "";
-
     yodaGif();
     clearInput();
-    // yodaPhrase();
+    yodaPhrase();
 }
 
 // fetch yoda gif
@@ -49,7 +48,6 @@ var yodaGif =function(){
             // var gifHolder = document.querySelector("#gif");
             gifHolder.appendChild(img);
         // })
-        console.log(json);
   })
 
   .catch(error => document.body.appendChild = error)
@@ -59,7 +57,6 @@ var yodaGif =function(){
 var yodaPhrase = function (){
     console.log("called");
     var phraseApi = "http://api.funtranslations.com/translate/yoda?text=" + text + "";
-    // fetch(`http://api.funtranslations.com/translate/yoda?text=${text}`)
     fetch (phraseApi)
         .then((res) => res.json())
         .then((data) => {
@@ -72,7 +69,7 @@ var yodaPhrase = function (){
     clearInput();
 };
 
-
+// testing functions
 // yodaGif();
 // yodaPhrase();
 
