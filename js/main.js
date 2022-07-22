@@ -6,9 +6,12 @@ var userInput =document.querySelector("#generate-gif");
 var phraseInput=document.querySelector("#phrase")
 var gifHolder = document.querySelector("#gif");
 
-var text = "";
-
+// global storage
+var text = {};
+var textTranslated = {};
+var randomGif = {};
 // added to test the event listener
+
 function getInput(){
     var enteredPhrase=phraseInput.value.trim();
     // alert(enteredPhrase);
@@ -17,7 +20,6 @@ function getInput(){
 
 // clear Input field
 function clearInput(){
-    // console.log("called clear")
     document.getElementById("phrase").value="";
 }
 
@@ -25,14 +27,12 @@ function clearInput(){
 var submitForm = function(){
     // prevent page from refreshing
     event.preventDefault();
-    savedTranslation();
     // run functions
     getInput();
     gifHolder.innerHTML = "";
-    // savedTranslation();
     yodaGif();
     clearInput();
-    yodaPhrase();
+    // yodaPhrase();
 }
 
 // fetch yoda gif
@@ -43,26 +43,30 @@ var yodaGif =function(){
         .then(json => {
             json.data
             var url= json.data[Math.floor(Math.random() *20)].images.fixed_height.url
+            // create img element
             var img = document.createElement('img')
             img.src = url
+            var gifUrl = img.src
+            // console.log(gifUrl) - one url produced
             gifHolder.appendChild(img);
-        // })
-  })
-
-  .catch(error => document.body.appendChild = error)
+            console.log(randomGif)
+            saveGif(gifUrl);
+        })
+    .catch(error => document.body.appendChild = error);
 };
 
 // fetch yoda translation
 var yodaPhrase = function (){
-    console.log("called");
     var phraseApi = "https://api.funtranslations.com/translate/yoda?text=" + text + "";
     fetch (phraseApi)
         .then((res) => res.json())
         .then((data) => {
-            // console.log(data);
-            // console.log(data.contents);
-            // console.log(data.contents.translated);  
             document.getElementById("finalPhrase").textContent=data.contents.translated;
+            console.log(data.contents.translated);
+            console.log(JSON.stringify(data.contents.translated))
+            var newText= (data.contents.translated)
+            console.log(newText)
+            saveTextResult (newText)
         })
     .catch((err) => console.log(err));
     clearInput();
@@ -72,20 +76,24 @@ var yodaPhrase = function (){
 // yodaGif();
 // yodaPhrase();
 
-// future saved and display functions
-var savedTranslation = function (){
-    var savedTranslation = JSON.parse (localStorage.getItem('searches')) || [];
-    var textTranslation = phraseInput.value.trim();
-    // var savedGif = url
-    if (savedTranslation.indexOf(textTranslation) === -1){
-        savedTranslation.push(textTranslation);
-    };
-    // if function/set item for gif
-    localStorage.setItem("searches", JSON.stringify(savedTranslation));
-}
+// Local save functions for text and gif
+var saveTextResult = function (textTranslated){
+    resultObj = {
+        type: textTranslated,
+    }
+    var savedQuotes = JSON.parse(localStorage.getItem("savedQuotes")) || [];
+    savedQuotes.push(textTranslated);
+    localStorage.setItem("savedQuotes", JSON.stringify(savedQuotes));
+};
 
-var savedGif = function(){
-    var =
+var saveGif = function(randomGif){
+    gifObj = {
+        type: randomGif,
+    };
+    var gifArray = JSON.parse(localStorage.getItem("gifArray")) || [];
+    gifArray.push(randomGif);
+    console.log(randomGif)
+    localStorage.setItem("gifArray", JSON.stringify(gifArray));
 }
 
 // display function - div holder, img, translation - append small display or just translation to pull it back
