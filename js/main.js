@@ -25,9 +25,11 @@ function clearInput(){
 var submitForm = function(){
     // prevent page from refreshing
     event.preventDefault();
+    savedTranslation();
     // run functions
     getInput();
     gifHolder.innerHTML = "";
+    // savedTranslation();
     yodaGif();
     clearInput();
     yodaPhrase();
@@ -54,10 +56,6 @@ var yodaGif =function(){
 var yodaPhrase = function (){
     console.log("called");
     var phraseApi = "https://api.funtranslations.com/translate/yoda?text=" + text + "";
-<<<<<<< HEAD
-    // fetch(`http://api.funtranslations.com/translate/yoda?text=${text}`)
-=======
->>>>>>> develop
     fetch (phraseApi)
         .then((res) => res.json())
         .then((data) => {
@@ -75,8 +73,21 @@ var yodaPhrase = function (){
 // yodaPhrase();
 
 // future saved and display functions
-// var savedTranslation = function (){
-//     var savedTranslation = JSON.parse (localStorage.getItem(''))
-// }
+var savedTranslation = function (){
+    var savedTranslation = JSON.parse (localStorage.getItem('searches')) || [];
+    var textTranslation = phraseInput.value.trim();
+    // var savedGif = url
+    if (savedTranslation.indexOf(textTranslation) === -1){
+        savedTranslation.push(textTranslation);
+    };
+    // if function/set item for gif
+    localStorage.setItem("searches", JSON.stringify(savedTranslation));
+}
+
+var savedGif = function(){
+    var =
+}
+
+// display function - div holder, img, translation - append small display or just translation to pull it back
 
 userInput.addEventListener("submit", submitForm);
