@@ -1,6 +1,6 @@
 var displayResult = function (){
     console.log("called")
-    var savedQuotes = JSON.parse(localStorage.getItem("SavedQuotes")) || [];
+    var savedQuotes = JSON.parse(localStorage.getItem("savedQuotes")) || [];
     var gifArray = JSON.parse(localStorage.getItem("gifArray")) || [];
 
     savedQuotes.forEach((type1, index) => {
@@ -16,4 +16,4 @@ var displayResult = function (){
 
     });
 };
-displayResult();
+// displayResult();
