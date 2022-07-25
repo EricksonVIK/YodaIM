@@ -100,25 +100,25 @@ var saveGif = function(randomGif){
 };
 
 // display function - div holder, img, translation - append small display or just translation to pull it back
-var displayResult = function (){
-    console.log("called")
-    var savedQuotes=JSON.parse(localStorage.getItem("savedQuotes")) || [];
-    console.log(savedQuotes)
-    var gifArray = JSON.parse(localStorage.getItem("gifArray")) || [];
-    console.log(gifArray)
-    savedQuotes.forEach((type1, index) => {
-        const type2 = gifArray[index];
-        var displayHolder = document.getElementById("display")
-        var displayBlock = document.createElement("div");
-        displayBlock.classList = "holder";
-        displayBlock.setAttribute("data-translation", type1.type)
-        console.log(type1)
-        console.log(type2)
-        displayBlock.setAttribute("data-gif", type2.type)
-        displayHolder.appendChild(displayBlock);
-    });
+// var displayResult = function (){
+//     console.log("called")
+//     var savedQuotes=JSON.parse(localStorage.getItem("savedQuotes")) || [];
+//     console.log(savedQuotes)
+//     var gifArray = JSON.parse(localStorage.getItem("gifArray")) || [];
+//     console.log(gifArray)
+//     savedQuotes.forEach((type1, index) => {
+//         const type2 = gifArray[index];
+//         var displayHolder = document.getElementById("display")
+//         var displayBlock = document.createElement("div");
+//         displayBlock.classList = "holder";
+//         displayBlock.setAttribute("data-translation", type1.type)
+//         console.log(type1)
+//         console.log(type2)
+//         displayBlock.setAttribute("data-gif", type2.type)
+//         displayHolder.appendChild(displayBlock);
+//     });
 
-};
+// };
 // displayResult();
     // gifArray.forEach(() => {
     //     var displayHolder= document.getElementById("display")
