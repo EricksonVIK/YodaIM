@@ -119,7 +119,7 @@ var displayResult = function (){
     });
 
 };
-displayResult();
+// displayResult();
     // gifArray.forEach(() => {
     //     var displayHolder= document.getElementById("display")
     //     var gifBlock=document.createElement("a")
