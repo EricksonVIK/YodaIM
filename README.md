@@ -1,27 +1,40 @@
-# Gifyoda
 
-## Description
+  # YodaIM ![](https://img.shields.io/github/languages/count/EricksonVik/YodaIM)
 
-WHEN the user enters a sentence or phrase <br/>
-THEN it will be translated into how Yoda would say it <br/>
-WHEN the user generates a yoda-speak quote <br/>
-THEN they will be able to match that quote with a Starwars gif <br/>
-WHEN the user matches their text to a gif <br/>
-THEN they will experience joy <br/>
+  ![](https://img.shields.io/github/languages/top/EricksonVik/YodaIM)
 
-## User Story
+  ## Description 
+  A fun app that creates a Yoda translated phrase (aka Yod-speak) combined with a random Gif based on user input.  The results are stored locally and available via display previous button.   
 
-As a Starwars fan, I want to be able to add phrases in said in Yoda-speak to Starwars gifs, so that I can constantly entertain myself and my fellow Starwars fans with constant Yoda humor.
+  ## Table of contents
+  - [Usage](#usage)
+  - [API's](#apis)
+  - [Screenshot](#screenshot)
+  - [SlideShow](#slideshow)
+  - [Contact Infomation](#contact)
+  - [License](#license)
 
-## API's
+  ## Usage
+  Type, click, and laugh. Click previous to explore locally saved results.
 
-https://rapidapi.com/orthosie/api/yoda-translator <br/>
-https://developers.giphy.com/docs/api/
+  ## API's
 
-## ScreenShot of Design
+  https://rapidapi.com/orthosie/api/yoda-translator <br/>
+  https://developers.giphy.com/docs/api/
 
-![Gifyoda mock-up 2](https://user-images.githubusercontent.com/106448076/179367543-f9b1fb7b-29c2-46f9-8a92-ccfacb517910.png)
+  ## Screenshot
+  ![](image/Screenshot%202022-08-21%20130910.png)
 
-## Slideshow
+  ## Slideshow
 
-https://docs.google.com/presentation/d/1CstK5CcVSNSNaCOhhVEDyLqpkWdO5yfcacV8ohrL-88/edit?usp=sharing
+  https://docs.google.com/presentation/d/1CstK5CcVSNSNaCOhhVEDyLqpkWdO5yfcacV8ohrL-88/edit?usp=sharing
+
+  ## Contact 
+  https://github.com/EricksonVik </br>
+
+  
+
+  ## License
+  ![badmath](https://img.shields.io/github/license/EricksonVik/YodaIM)
+  
+
